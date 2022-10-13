@@ -43,9 +43,9 @@ public class FXMLController implements Initializable {
                 sb.append(line);
                 sb.append(System.lineSeparator());
                 line = br.readLine();  
-                if(line != null){
+                
                     lst.getItems().add(line);
-                }
+                
             }
         } finally {
             br.close();
