@@ -5,9 +5,20 @@
  */
 package lectortxt.Ex4;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javax.swing.text.TextAction;
 
 /**
  * FXML Controller class
@@ -15,6 +26,31 @@ import javafx.fxml.Initializable;
  * @author alumno
  */
 public class FXMLController implements Initializable {
+    
+    @FXML
+    private Button btn;
+    
+    @FXML
+    private TextArea txt;
+    
+    @FXML
+    public void btnOnAction(ActionEvent event) throws FileNotFoundException, IOException{
+        BufferedReader br = new BufferedReader(new FileReader("/home/alumno/NetBeansProjects/LectorTXT/src/lectortxt/Ex4/Texto"));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            String everything = sb.toString();
+            txt.setText(everything);
+        } finally {
+            br.close();
+        }
+    }
 
     /**
      * Initializes the controller class.
