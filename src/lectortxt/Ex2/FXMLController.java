@@ -34,7 +34,7 @@ public class FXMLController implements Initializable {
     public void btnGuardarOnAction(ActionEvent event) throws IOException{
         FileWriter myWriter = new FileWriter("/home/alumno/NetBeansProjects/LectorTXT/src/lectortxt/Ex2/Hola.txt", true);
         myWriter.write(txt.getText() + "\n" );
-        myWriter.close();    
+        myWriter.close();
     }
         
 
