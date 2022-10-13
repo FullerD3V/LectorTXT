@@ -35,7 +35,7 @@ public class FXMLController implements Initializable {
     
     @FXML
     public void btnOnAction(ActionEvent event) throws FileNotFoundException, IOException{
-        BufferedReader br = new BufferedReader(new FileReader("/home/alumno/NetBeansProjects/LectorTXT/src/lectortxt/Ex4/Texto"));
+        BufferedReader br = new BufferedReader(new FileReader("/home/alumno/NetBeansProjects/LectorTXT/README.md"));
         try {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
