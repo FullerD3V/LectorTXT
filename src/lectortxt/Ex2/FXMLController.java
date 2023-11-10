@@ -5,10 +5,8 @@
  */
 package lectortxt.Ex2;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -32,9 +31,11 @@ public class FXMLController implements Initializable {
     
     @FXML
     public void btnGuardarOnAction(ActionEvent event) throws IOException{
-        FileWriter myWriter = new FileWriter("/home/alumno/NetBeansProjects/LectorTXT/src/lectortxt/Ex2/Hola.txt", true);
+        FileWriter myWriter = new FileWriter("src/lectortxt/Ex2/Hola.txt", true);
         myWriter.write(txt.getText() + "\n" );
         myWriter.close();
+        Stage currentStage = (Stage) btnGuardar.getScene().getWindow();
+        currentStage.close();
     }
         
 
